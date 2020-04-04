@@ -44,7 +44,7 @@ function buildCatalyst() {
                                           -DCMAKE_C_FLAGS_MAC_CATALYST:STRING="$CATALYST_FLAG" \
                                           -DCMAKE_BUILD_TYPE=MAC_CATALYST
     sed -i '' "s/-mmacosx-version-min=10.15//g" "$BUILD_FOLDER_CATALYST"/trezor-crypto/CMakeFiles/TrezorCrypto.dir/flags.make
-    sed -i '' "s/-mmacosx-version-min=10.15//g" "$BUILD_FOLDER_CATALYST"/CMakeFiles/protobuf.dir/flags.make
+    sed -i '' "s/-mmacosx-version-min=10.15//g" "$BUILD_FOLDER_CATALYST"/CMakeFiles/proto.dir/flags.make
     sed -i '' "s/-mmacosx-version-min=10.15//g" "$BUILD_FOLDER_CATALYST"/CMakeFiles/TrustWalletCore.dir/flags.make
     make -C "$BUILD_FOLDER_CATALYST" $TARGETS
 }

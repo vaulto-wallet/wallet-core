@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# This script generates all protobuf files using the embedded version of
+# This script generates all proto files using the embedded version of
 # Protobuf. It is important that the version used to generate the files is the
 # same version being linked.
 #
@@ -28,10 +28,10 @@ then
 fi
 echo "PREFIX: $PREFIX"
 export PATH="$PREFIX/bin":$PATH
-# library paths, for protobuf plugins
+# library paths, for proto plugins
 export LD_LIBRARY_PATH="$PREFIX/lib":$LD_LIBRARY_PATH
 export DYLD_LIBRARY_PATH="$PREFIX/lib":$LD_LIBRARY_PATH
-# protoc executable (protobuf compiler)
+# protoc executable (proto compiler)
 PROTOC="$PREFIX/bin/protoc"
 which $PROTOC
 $PROTOC --version

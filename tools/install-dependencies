@@ -61,13 +61,13 @@ export PROTOBUF_VERSION=3.9.0
 PROTOBUF_DIR="$ROOT/build/protobuf/staging"
 mkdir -p "$PROTOBUF_DIR"
 cd "$PROTOBUF_DIR"
-if [ ! -f protobuf-java-$PROTOBUF_VERSION.tar.gz ]; then
-    curl -fSsOL https://github.com/protocolbuffers/protobuf/releases/download/v$PROTOBUF_VERSION/protobuf-java-$PROTOBUF_VERSION.tar.gz
+if [ ! -f proto-java-$PROTOBUF_VERSION.tar.gz ]; then
+    curl -fSsOL https://github.com/protocolbuffers/protobuf/releases/download/v$PROTOBUF_VERSION/proto-java-$PROTOBUF_VERSION.tar.gz
 fi
-tar xzf protobuf-java-$PROTOBUF_VERSION.tar.gz
+tar xzf proto-java-$PROTOBUF_VERSION.tar.gz
 
 # Build Protobuf
-cd protobuf-$PROTOBUF_VERSION
+cd proto-$PROTOBUF_VERSION
 ./configure --prefix="$PREFIX"
 make -j4
 make install
@@ -87,7 +87,7 @@ if [ -x "$(command -v swift)" ]; then
     tar xzf $SWIFT_PROTOBUF_VERSION.tar.gz
 
     # Build Swift Protobuf
-    cd swift-protobuf-$SWIFT_PROTOBUF_VERSION
+    cd swift-proto-$SWIFT_PROTOBUF_VERSION
     swift build --static-swift-stdlib -c release
     cp -f "$SWIFT_PROTOBUF_DIR/swift-protobuf-$SWIFT_PROTOBUF_VERSION/.build/release/protoc-gen-swift" "$PREFIX/bin" | true
     $PREFIX/bin/protoc-gen-swift --version
