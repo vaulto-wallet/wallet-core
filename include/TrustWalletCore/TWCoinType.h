@@ -26,6 +26,7 @@ enum TWCoinType {
     TWCoinTypeAion = 425,
     TWCoinTypeBinance = 714,
     TWCoinTypeBitcoin = 0,
+    TWCoinTypeBitcoinTest = 9,
     TWCoinTypeBitcoinCash = 145,
     TWCoinTypeCallisto = 820,
     TWCoinTypeCardano = 1815, // Note: Cardano Shelley testnet uses purpose 1852 (not 44) 1852/1815
